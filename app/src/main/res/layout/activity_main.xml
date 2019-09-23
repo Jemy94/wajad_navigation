@@ -6,13 +6,89 @@
   android:layout_height="match_parent"
   tools:context=".MainActivity">
 
-  <TextView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="Hello World!"
+  <FrameLayout
+    android:id="@+id/main_frag_container"
+    android:layout_width="0dp"
+    android:layout_height="0dp"
     app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintLeft_toLeftOf="parent"
-    app:layout_constraintRight_toRightOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toTopOf="parent" />
 
+  <androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent">
+
+    <FrameLayout
+      android:id="@+id/frameLayout"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:background="@drawable/bottom_nav_bar_foreground"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageButton
+      android:id="@+id/home_button"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="16dp"
+      android:background="@drawable/float_button_selected"
+      android:clickable="true"
+      android:contentDescription="@null"
+      android:focusable="true"
+      android:src="@drawable/home"
+      app:layout_constraintBottom_toBottomOf="@+id/profile"
+      app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageButton
+      android:id="@+id/notification"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginEnd="4dp"
+      android:layout_marginStart="10dp"
+      android:background="@drawable/float_button_unselected"
+      android:clickable="true"
+      android:contentDescription="@null"
+      android:focusable="true"
+      android:src="@drawable/notification"
+      app:layout_constraintBottom_toBottomOf="@+id/qr_code"
+      app:layout_constraintEnd_toStartOf="@+id/qr_code"
+      app:layout_constraintStart_toEndOf="@+id/home_button"
+      app:rippleColor="@color/ripple_dark" />
+
+    <ImageButton
+      android:id="@+id/qr_code"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginBottom="38dp"
+      android:layout_marginEnd="10dp"
+      android:background="@drawable/float_button_unselected"
+      android:clickable="true"
+      android:contentDescription="@null"
+      android:focusable="true"
+      android:src="@drawable/qr_code_1"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toStartOf="@+id/profile"
+      app:layout_constraintStart_toEndOf="@+id/notification"
+      app:rippleColor="@color/ripple_dark" />
+
+    <ImageButton
+      android:id="@+id/profile"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginBottom="18dp"
+      android:layout_marginEnd="16dp"
+      android:background="@drawable/float_button_unselected"
+      android:clickable="true"
+      android:contentDescription="@null"
+      android:focusable="true"
+      android:src="@drawable/avatar"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:rippleColor="@color/ripple_dark" />
+  </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

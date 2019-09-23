@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat.getColor
 import androidx.fragment.app.Fragment
 import com.example.wajadnagvigationbottom.R
 import kotlinx.android.synthetic.main.common_layout.common
@@ -19,7 +20,7 @@ class SecondFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        main_text.text = "Second Fragment"
-        common.setBackgroundColor(resources.getColor(android.R.color.darker_gray))
+      main_text.text = "Notifications"
+      common.setBackgroundColor(getColor(activity!!, android.R.color.holo_blue_bright))
     }
 }

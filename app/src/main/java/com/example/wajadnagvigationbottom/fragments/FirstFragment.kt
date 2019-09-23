@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat.getColor
 import androidx.fragment.app.Fragment
 import com.example.wajadnagvigationbottom.R
 import kotlinx.android.synthetic.main.common_layout.common
@@ -20,7 +21,7 @@ class FirstFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        main_text.text = "First Fragment"
-        common.setBackgroundColor(resources.getColor(android.R.color.holo_blue_light))
+      main_text.text = "Home"
+      common.setBackgroundColor(getColor(activity!!, android.R.color.holo_green_dark))
     }
 }
