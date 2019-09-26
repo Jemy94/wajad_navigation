@@ -17,6 +17,7 @@ class MainActivity : AppCompatActivity() {
         .replace(R.id.nav_host_fragment, fragment)
         .addToBackStack(null)
         .commit()
+
     }
   }
 

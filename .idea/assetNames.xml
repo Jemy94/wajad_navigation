@@ -10,6 +10,8 @@
         <entry key="_4911-1" value="_4911_1" />
         <entry key="_4911-2" value="_4911_2" />
         <entry key="_4911-3" value="_4911_3" />
+        <entry key="home-1" value="home_menu" />
+        <entry key="notification-1" value="notification_menu" />
         <entry key="qr_code-1" value="qr_code_1" />
       </map>
     </option>
