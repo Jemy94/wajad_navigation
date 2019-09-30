@@ -11,12 +11,12 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
 import com.example.wajadnagvigationbottom.MainActivity
 import com.example.wajadnagvigationbottom.R
-import kotlinx.android.synthetic.main.activity_main.home_button
-import kotlinx.android.synthetic.main.activity_main.notification
-import kotlinx.android.synthetic.main.activity_main.profile
-import kotlinx.android.synthetic.main.activity_main.qr_code
 import kotlinx.android.synthetic.main.common_layout.common
 import kotlinx.android.synthetic.main.common_layout.main_text
+import kotlinx.android.synthetic.main.content_main_activity.home_button
+import kotlinx.android.synthetic.main.content_main_activity.notification
+import kotlinx.android.synthetic.main.content_main_activity.profile
+import kotlinx.android.synthetic.main.content_main_activity.qr_code
 
 class NotificationFragment : Fragment() {
   override fun onCreateView(
