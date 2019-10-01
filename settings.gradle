@@ -1,2 +1,2 @@
-include ':app'
+include ':app', ':material-intro-screen'
 rootProject.name='Wajad Nagvigation Bottom'

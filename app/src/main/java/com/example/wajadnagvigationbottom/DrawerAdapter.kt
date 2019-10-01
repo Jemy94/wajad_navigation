@@ -5,9 +5,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import kotlinx.android.synthetic.main.bottom_layout.view.bottom_text
 import kotlinx.android.synthetic.main.menu_layout.view.item_icon
 import kotlinx.android.synthetic.main.menu_layout.view.item_name
 import kotlinx.android.synthetic.main.side_menu_header.view.user_image
+import kotlinx.android.synthetic.main.side_menu_header.view.user_name
+import kotlinx.android.synthetic.main.side_menu_header.view.user_points
 
 /**
  * Authored by Ahmed Gamal on 26 Sep, 2019.
@@ -90,12 +93,12 @@ class DrawerHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
 class HeaderHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
   val userImage = itemView.user_image
-  val userName = itemView.item_name
-  val userPoints = itemView.item_name
+  val userName = itemView.user_name
+  val userPoints = itemView.user_points
 }
 
 class BottomHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-  val question = itemView.item_name
+  val question = itemView.bottom_text
 }
 
 

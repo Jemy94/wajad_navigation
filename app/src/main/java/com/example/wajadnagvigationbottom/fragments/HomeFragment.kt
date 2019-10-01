@@ -52,6 +52,11 @@ class HomeFragment : Fragment() {
   override fun onActivityCreated(savedInstanceState: Bundle?) {
     super.onActivityCreated(savedInstanceState)
     main_text.text = "Home"
+
+   /* main_text.setOnClickListener {
+      val i  = Intent(activity as MainActivity, IntroActivity::class.java)
+      startActivity(i)
+    }*/
     common.setBackgroundColor(getColor(activity!!, android.R.color.holo_green_dark))
     (activity as MainActivity).home_button.animate()
       .setDuration(200)
