@@ -8,4 +8,6 @@
   <color name="ripple_dark">#60777777</color>
   <color name="ripple_light">#CCFFFFFF</color>
   <color name="gray">#b4b4b4</color>
+  <color name="search_color">#2AC3F3</color>
+
 </resources>
