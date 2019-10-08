@@ -29,7 +29,9 @@ class ViewPagerAdapter(private val onBoardingList: ArrayList<ViewPagerModel>) :
       )
     )
 
-  override fun getItemCount(): Int = Int.MAX_VALUE
+  override fun getItemCount(): Int{
+    return onBoardingList.size
+  }
 
   override fun onBindViewHolder(holder: ViewPagerHolder, position: Int) {
     holder.image.setImageResource(onBoardingList[position].image)

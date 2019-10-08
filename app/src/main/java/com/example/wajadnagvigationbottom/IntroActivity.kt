@@ -39,11 +39,20 @@ class IntroActivity : AppCompatActivity() {
     )
     setUpSlider(view_pager)
     view_pager.adapter = ViewPagerAdapter(onBoardingList)
-    view_pager.isUserInputEnabled = false
 
 
+    view_pager.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
+      override fun onPageScrolled(position: Int, positionOffset: Float, positionOffsetPixels: Int) {
+        super.onPageScrolled(position, positionOffset, positionOffsetPixels)
+        if (position == 2) {
+          on_boarding_next_button.text = "done"
+        } else {
+          on_boarding_next_button.text = "next"
+        }
+      }
+    })
     on_boarding_next_button.setOnClickListener {
-      if (view_pager.currentItem ==2) {
+      if (view_pager.currentItem == 2) {
         val i = Intent(this, MainActivity::class.java)
         startActivity(i)
         finish()
