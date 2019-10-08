@@ -12,6 +12,7 @@ import androidx.drawerlayout.widget.DrawerLayout
 import androidx.drawerlayout.widget.DrawerLayout.DrawerListener
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.wajadnagvigationbottom.R.drawable
+import com.example.wajadnagvigationbottom.R.string
 import com.example.wajadnagvigationbottom.fragments.HomeFragment
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import kotlinx.android.synthetic.main.activity_main.drawer_layout
@@ -43,24 +44,24 @@ class MainActivity : AppCompatActivity() {
 
 
     list.add(HeaderModel(drawable.profile_image, "Mohamed Ahmed", "150 Points"))
-    list.add( DrawerModel(drawable.home_menu, "Home"))
+    list.add(DrawerModel(drawable.home_menu, "Home"))
     list.add(DrawerModel(drawable.qr_code, "My QR codes"))
-    list.add( DrawerModel(drawable.notification_menu, "Notifications"))
-    list.add( DrawerModel(drawable.post_it, "My Items"))
-    list.add( DrawerModel(drawable.noun_info_1585217, "About us"))
-    list.add( DrawerModel(drawable.phone_book, "Contact us"))
-    list.add( DrawerModel(drawable.noun_logout_1262641, "Logout"))
+    list.add(DrawerModel(drawable.notification_menu, "Notifications"))
+    list.add(DrawerModel(drawable.post_it, "My Items"))
+    list.add(DrawerModel(drawable.noun_info_1585217, "About us"))
+    list.add(DrawerModel(drawable.phone_book, "Contact us"))
+    list.add(DrawerModel(drawable.noun_logout_1262641, "Logout"))
     list.add(DrawerModel(drawable.noun_language_2712648, "Language"))
-    list.add( BottomTextModel("How Does it work ?"))
+    list.add(BottomTextModel("How Does it work ?"))
 
     recycler_view.layoutManager = LinearLayoutManager(this)
     recycler_view.adapter = DrawerAdapter(this, list)
     val toggle = ActionBarDrawerToggle(
       this, drawerLayout,
-      toolBar, R.string.navigation_drawer_open, R.string.navigation_drawer_close
+      toolBar, string.navigation_drawer_open, string.navigation_drawer_close
     )
     toggle.syncState()
-    drawerLayout.drawerElevation=0.0f
+    drawerLayout.drawerElevation = 0.0f
 
     drawerLayout.addDrawerListener(object : DrawerListener {
       override fun onDrawerStateChanged(newState: Int) {
@@ -68,7 +69,7 @@ class MainActivity : AppCompatActivity() {
       }
 
       override fun onDrawerSlide(drawerView: View, slideOffset: Float) {
-        Log.d("Mainjnibu",slideOffset.toString())
+        Log.d("Mainjnibu", slideOffset.toString())
         main_activity_coordinator.translationX = slideOffset * drawerView.width
         drawerLayout.bringChildToFront(drawerView)
         drawerLayout.requestLayout()
@@ -81,7 +82,6 @@ class MainActivity : AppCompatActivity() {
       override fun onDrawerOpened(drawerView: View) {
       }
     })
-
 
 
   }

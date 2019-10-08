@@ -10,26 +10,48 @@ import kotlinx.android.synthetic.main.activity_intro.view_pager
 import setParallaxTransformation
 
 class IntroActivity : AppCompatActivity() {
-  private val onBoardingList =ArrayList<ViewPagerModel>()
+  private val onBoardingList = ArrayList<ViewPagerModel>()
   private val numberOfPages = 3
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
     setContentView(R.layout.activity_intro)
 
-    onBoardingList.add(ViewPagerModel(R.drawable.ic_onboarding_1,"Lost & Found \n items","ahmed gamal ahmed"))
-    onBoardingList.add(ViewPagerModel(R.drawable.ic_onboarding_2,"Prevent to lose \n your item","opopopo gamal ahmed"))
-    onBoardingList.add(ViewPagerModel(R.drawable.ic_onboarding_3,"Wajad Zone ","ablab lba lbal lbalbl"))
+    onBoardingList.add(
+      ViewPagerModel(
+        R.drawable.ic_onboarding_1,
+        "Lost & Found \n items",
+        "ahmed gamal ahmed"
+      )
+    )
+    onBoardingList.add(
+      ViewPagerModel(
+        R.drawable.ic_onboarding_2,
+        "Prevent to lose \n your item",
+        "opopopo gamal ahmed"
+      )
+    )
+    onBoardingList.add(
+      ViewPagerModel(
+        R.drawable.ic_onboarding_3,
+        "Wajad Zone ",
+        "ablab lba lbal lbalbl"
+      )
+    )
     setUpSlider(view_pager)
     view_pager.adapter = ViewPagerAdapter(onBoardingList)
+    view_pager.isUserInputEnabled = false
+
 
     on_boarding_next_button.setOnClickListener {
-      view_pager.currentItem = view_pager.currentItem + 1
-        if( view_pager.currentItem ==2){
-          on_boarding_next_button.text="done"
-        }
-      if (view_pager.currentItem > 2) {
+      if (view_pager.currentItem ==2) {
         val i = Intent(this, MainActivity::class.java)
         startActivity(i)
+        finish()
+      } else {
+        view_pager.currentItem = view_pager.currentItem + 1
+        if (view_pager.currentItem == 2) {
+          on_boarding_next_button.text = "done"
+        }
       }
     }
   }
@@ -40,7 +62,6 @@ class IntroActivity : AppCompatActivity() {
       setPageTransformer { page, position ->
         setParallaxTransformation(page, position)
       }
-
       addSlideChangeListener()
 
     }
