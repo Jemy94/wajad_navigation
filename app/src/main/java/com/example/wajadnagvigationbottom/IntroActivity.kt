@@ -6,6 +6,8 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewpager2.widget.ViewPager2
 import kotlinx.android.synthetic.main.activity_intro.on_boarding_next_button
+import kotlinx.android.synthetic.main.activity_intro.page_indicator_View
+import kotlinx.android.synthetic.main.activity_intro.skip_text_view
 import kotlinx.android.synthetic.main.activity_intro.view_pager
 import setParallaxTransformation
 
@@ -39,11 +41,16 @@ class IntroActivity : AppCompatActivity() {
     )
     setUpSlider(view_pager)
     view_pager.adapter = ViewPagerAdapter(onBoardingList)
-
+    skip_text_view.setOnClickListener {
+      val i = Intent(this, MainActivity::class.java)
+      startActivity(i)
+      finish()
+    }
 
     view_pager.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
       override fun onPageScrolled(position: Int, positionOffset: Float, positionOffsetPixels: Int) {
         super.onPageScrolled(position, positionOffset, positionOffsetPixels)
+        page_indicator_View.selection = position
         if (position == 2) {
           on_boarding_next_button.text = "done"
         } else {

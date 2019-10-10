@@ -39,6 +39,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     toolBar = toolbar
+    toolBar.title=""
     setSupportActionBar(toolBar)
     drawerLayout = drawer_layout
 
