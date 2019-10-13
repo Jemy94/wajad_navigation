@@ -14,9 +14,10 @@
     android:background="@drawable/loggin_head"
     app:layout_constraintBottom_toTopOf="@id/guideline"
     app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintHorizontal_bias="0.0"
+    app:layout_constraintHorizontal_bias="1.0"
     app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent" />
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintVertical_bias="0.0" />
 
   <TextView
     android:id="@+id/email_label"
@@ -25,49 +26,80 @@
     android:layout_marginStart="16dp"
     android:layout_marginTop="12dp"
     android:layout_marginEnd="65dp"
+    android:textColor="@color/light_gray"
     android:text="EMAIL ADDRESS / MOBILE NUMBER"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintHorizontal_bias="0.0"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toBottomOf="@+id/frameLayout2" />
-
+<com.google.android.material.textfield.TextInputLayout
+  android:layout_width="match_parent"
+  android:layout_height="wrap_content"
+  android:id="@+id/text_input_email"
+  app:errorEnabled="true"
+  app:layout_constraintEnd_toEndOf="parent"
+  app:layout_constraintHorizontal_bias="1.0"
+  app:layout_constraintStart_toStartOf="@+id/email_label"
+  app:layout_constraintTop_toBottomOf="@+id/email_label">
   <com.google.android.material.textfield.TextInputEditText
-    android:id="@+id/textInputEditText"
+
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginStart="16dp"
     android:layout_marginEnd="16dp"
     android:inputType="textEmailAddress"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintHorizontal_bias="1.0"
-    app:layout_constraintStart_toStartOf="@+id/email_label"
-    app:layout_constraintTop_toBottomOf="@+id/email_label" />
+    />
+</com.google.android.material.textfield.TextInputLayout>
 
   <TextView
     android:id="@+id/password_label"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:layout_marginTop="24dp"
     android:layout_marginEnd="217dp"
     android:text="PASSWORD"
+    android:textColor="@color/light_gray"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintHorizontal_bias="0.0"
-    app:layout_constraintStart_toStartOf="@+id/textInputEditText"
-    app:layout_constraintTop_toBottomOf="@+id/textInputEditText" />
+    app:layout_constraintStart_toStartOf="@+id/email_label"
+    app:layout_constraintTop_toBottomOf="@+id/text_input_email" />
 
+  <com.google.android.material.textfield.TextInputLayout
+  android:layout_width="match_parent"
+  android:layout_height="wrap_content"
+  android:id="@+id/text_input_password"
+  app:passwordToggleEnabled="true"
+  app:errorEnabled="true"
+  app:layout_constraintBottom_toBottomOf="parent"
+  app:layout_constraintEnd_toEndOf="parent"
+  app:layout_constraintHorizontal_bias="1.0"
+  app:layout_constraintStart_toStartOf="@+id/password_label"
+  app:layout_constraintTop_toBottomOf="@+id/password_label"
+  app:layout_constraintVertical_bias="0.0" >
   <com.google.android.material.textfield.TextInputEditText
-    android:id="@+id/textInputEditText2"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginStart="16dp"
     android:layout_marginEnd="16dp"
     android:inputType="textPassword"
-    app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintHorizontal_bias="1.0"
-    app:layout_constraintStart_toStartOf="@+id/password_label"
-    app:layout_constraintTop_toBottomOf="@+id/password_label"
-    app:layout_constraintVertical_bias="0.0" />
+   />
+</com.google.android.material.textfield.TextInputLayout>
+
+
+  <TextView
+    android:id="@+id/forget_password_text_view"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="?attr/selectableItemBackground"
+    android:padding="1dp"
+    android:text="forget password"
+    android:textSize="14sp"
+    android:textStyle="bold"
+    app:layout_constraintBottom_toTopOf="@id/sign_in_button"
+    app:layout_constraintStart_toStartOf="@+id/email_label"
+    app:layout_constraintTop_toBottomOf="@id/text_input_password"
+    app:layout_constraintVertical_bias="0.437" />
 
   <androidx.constraintlayout.widget.Guideline
     android:id="@+id/guideline"
@@ -82,8 +114,11 @@
     android:layout_width="45dp"
     android:layout_height="45dp"
     android:layout_marginStart="58dp"
-    android:layout_marginTop="28dp"
+    android:layout_marginTop="8dp"
     android:src="@drawable/ic_facebook"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="?attr/selectableItemBackground"
     app:layout_constraintEnd_toStartOf="@+id/imageView4"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toBottomOf="@+id/sign_in_button" />
@@ -93,6 +128,9 @@
     android:layout_width="45dp"
     android:layout_height="45dp"
     android:layout_marginEnd="6dp"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="?attr/selectableItemBackground"
     android:src="@drawable/ic_twitter"
     app:layout_constraintEnd_toStartOf="@+id/imageView6"
     app:layout_constraintHorizontal_bias="0.571"
@@ -104,9 +142,13 @@
     android:layout_width="45dp"
     android:layout_height="45dp"
     android:layout_marginEnd="58dp"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="?attr/selectableItemBackground"
     android:src="@drawable/ic_google_plus"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintTop_toTopOf="@+id/imageView5" />
+
 
   <ImageView
     android:id="@+id/imageView4"
@@ -114,6 +156,10 @@
     android:layout_height="45dp"
     android:layout_marginStart="6dp"
     android:layout_marginEnd="6dp"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="?attr/selectableItemBackground"
+    android:padding="1dp"
     android:src="@drawable/ic_linkedin"
     app:layout_constraintEnd_toStartOf="@+id/imageView5"
     app:layout_constraintStart_toEndOf="@+id/imageView3"
@@ -124,44 +170,49 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginStart="16dp"
-    android:layout_marginTop="20dp"
+    android:layout_marginTop="36dp"
     android:layout_marginEnd="16dp"
     android:backgroundTint="@color/main_color"
     android:text="sign in"
     android:textColor="@color/white"
     app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintHorizontal_bias="1.0"
-    app:layout_constraintStart_toStartOf="@+id/textInputEditText2"
-    app:layout_constraintTop_toBottomOf="@+id/textInputEditText2" />
-
+    app:layout_constraintHorizontal_bias="0.0"
+    app:layout_constraintStart_toStartOf="@+id/text_input_password"
+    app:layout_constraintTop_toBottomOf="@+id/text_input_password" />
 
   <TextView
-    android:id="@+id/textView"
+    android:id="@+id/text_view"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:layout_marginStart="92dp"
+    android:layout_marginStart="68dp"
     android:layout_marginTop="20dp"
-    android:layout_marginBottom="70dp"
+    android:layout_marginEnd="20dp"
+    android:layout_marginBottom="28dp"
     android:text="Don't have an account ?"
+    android:textSize="14sp"
     app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toStartOf="@+id/sign_up_text_view"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toBottomOf="@+id/imageView4"
-    app:layout_constraintVertical_bias="1.0" />
+    app:layout_constraintVertical_bias="0.603" />
 
   <TextView
     android:id="@+id/sign_up_text_view"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:layout_marginEnd="60dp"
+    android:layout_marginEnd="68dp"
     android:text="Sign Up"
+    android:padding="2dp"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="?attr/selectableItemBackground"
     android:textColor="@color/main_color"
-    android:textSize="18sp"
+    android:textSize="14sp"
     android:textStyle="bold"
-    app:layout_constraintBottom_toBottomOf="@+id/textView"
+    app:layout_constraintBottom_toBottomOf="@+id/text_view"
     app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintHorizontal_bias="0.738"
-    app:layout_constraintStart_toEndOf="@+id/textView"
-    app:layout_constraintTop_toTopOf="@+id/textView"
+    app:layout_constraintStart_toEndOf="@+id/text_view"
+    app:layout_constraintTop_toTopOf="@+id/text_view"
     app:layout_constraintVertical_bias="1.0" />
 
 

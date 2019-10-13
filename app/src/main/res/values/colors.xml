@@ -10,5 +10,6 @@
   <color name="gray">#b4b4b4</color>
   <color name="search_color">#2AC3F3</color>
   <color name="unselected_page">#D7E2E0</color>
+  <color name="light_gray">#D7E2E0</color>
 
 </resources>
